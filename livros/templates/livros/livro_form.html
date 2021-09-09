@@ -1,0 +1,13 @@
+<div hx-target="this" hx-swap="outerHTML">
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}     
+        {% if livro %}
+            <button hx-post="{% url 'update-livro' livro.id %}">Alterar</button> 
+        {% else %}
+            <button hx-post="">Cadastrar</button> 
+        {% endif %}   
+    </form>  
+</div>
+
+{% comment %} <button hx-post=".">Cadastrar</button>  Não pega {% endcomment %}

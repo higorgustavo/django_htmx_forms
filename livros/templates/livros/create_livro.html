@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %} Livros {% endblock %}
+
+{% block content %}
+
+    <h1>Cadastrar Livros para: {{ autor.nome }}</h1>
+     
+    <button hx-get="{% url 'livro-form' %}" hx-swap="beforeend" hx-target="#livroforms">
+        Add livro
+    </button> 
+
+    <div id="livroforms">
+        {% for livro in livros %}
+            {% include "livros/detail_livro.html" %}
+        {% endfor %}
+    </div>
+
+{% endblock %}

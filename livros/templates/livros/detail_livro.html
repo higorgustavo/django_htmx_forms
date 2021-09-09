@@ -1,0 +1,7 @@
+<div hx-target="this" hx-swap="outerHTML">
+    <h3>{{ livro.titulo }}</h3>
+    <p>Número de páginas: {{ livro.numero_paginas }}</p>
+
+    <button hx-get="{% url 'update-livro' livro.id %}">Editar</button>
+    <button hx-post="{% url 'delete-livro' livro.id %}">Deletar</button>
+</div>

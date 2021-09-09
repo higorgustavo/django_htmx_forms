@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %} Autores {% endblock %}
+{% block content %}
+    <h1>Autores</h1>
+    {% for autor in autores %}        
+        <a href="{% url 'create-livro' autor.id %}">
+            <p>{{ autor.nome }}</p>
+        </a>        
+    {% endfor %}
+    <button type="button" class="btn btn-primary">Novo Autor</button>
+{% endblock %}
